@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>video/audio-test</title>
+</head>
+<body>
+<div style="text-align: center">
+    <button onclick="setPaused()">播放/暂停</button>
+    <button onclick="setBig()">大</button>
+    <button onclick="setMid()">中</button>
+    <button onclick="setSmall()">小</button>
+    <br />
+    <video id="video1" width="420" style="margin-top: 20px;" controls="controls">
+        <source src="video/mov_bbb.mp4" type="video/mp4" />
+        Your Browser does not support HTML5 video.
+    </video>
+    <br />
+    <audio src="audio/Bodhi%20Jones%20-%20Oh%20Father.mp3" controls="controls">
+        Your Browser does not support the audio tag.
+    </audio>
+</div>
+<script type="text/javascript">
+    var video1=document.getElementById("video1");
+    function setPaused(){
+        if(video1.paused){video1.play();}
+        else{video1.pause();}
+    }
+    function setBig(){
+        video1.width=560;
+    }
+    function setMid(){
+        video1.width=420;
+    }
+    function setSmall(){
+        video1.width=320;
+    }
+</script>
+</body>
+</html>

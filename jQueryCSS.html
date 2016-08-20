@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jqueryCSS</title>
+    <script src="JS/jquery-3.1.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("p").addClass("important white");
+            });
+            $("#btn2").click(function(){
+                $("p").removeClass("important white");
+            });
+            $("#btn3").click(function(){
+                $("p").toggleClass("important white")
+            });
+            $("#btn4").click(function(){
+                $("p").css({
+                    "background-color":"#327dff",
+                    "font-family": "'Microsoft YaHei UI', sans-serif",
+                    "font-weight": "bold",
+                    "width": "300px",
+                    "color": "#ffffff"
+                });
+            });
+        });
+    </script>
+    <style type="text/css">
+        .important{
+            font-family: "Microsoft YaHei UI", sans-serif;
+            font-weight: bold;
+            background-color: #327dff;
+            width: 300px;
+        }
+        .white{
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<p>THE FIRST.</p>
+<p>THE SECOND.</p>
+<button id="btn1">添加类</button>
+<button id="btn2">删除类</button>
+<button id="btn3">切换类</button>
+<button id="btn4">设置css</button>
+</body>
+</html>

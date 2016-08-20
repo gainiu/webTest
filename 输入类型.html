@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<body>
+<form method="get">
+<input type="text" list="url_list" name="link" placeholder="请输入网址" required="required" />
+<datalist id="url_list">
+    <option label="W3School" value="http://www.w3school.com.cn" />
+    <option label="Google" value="http://www.google.com" />
+    <option label="Microsoft" value="http://www.microsoft.com" />
+</datalist>
+    <input type="text" pattern="[0-9]{8}" title="请输入8位数字" placeholder="请输入8位数字" />
+<input type="submit" />
+</form>
+<div>
+    <input type="number" min="0" max="100" step="2" />
+    <input type="file" multiple="multiple" />
+</div>
+</body>
+</html>

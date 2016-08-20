@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery添加元素</title>
+    <script src="JS/jquery-3.1.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("p").append("<b>Append text</b>.");
+            });
+            $("#btn2").click(function(){
+                $("ol").append("<li>Append item</li>")
+            });
+            $("#bePic").click(function(){
+                $("img").before("<b>BEFORE</b>");
+            });
+            $("#afPic").click(function(){
+                $("img").after("<b>AFTER</b>");
+            });
+        });
+        function appendText(){
+            var txt1="<p>TEXT 1.</p>";// 以 HTML 创建新元素
+            var txt2=$("<p></p>").text("TEXT 2.");// 以 jQuery 创建新元素
+            var txt3=document.createElement("p"); // 以 DOM 创建新元素
+            txt3.innerHTML="TEXT 3.";
+            $("body").append(txt1,txt2,txt3);// 追加新元素
+        }
+    </script>
+</head>
+<body>
+<p>the first.</p>
+<p>the second.</p>
+<ol>
+    <li>list 1</li>
+    <li>list 2</li>
+    <li>list 3</li>
+</ol>
+<img src="pic/2.jpg" /><br />
+<button id="bePic">在图片前面添加文本</button>
+<button id="afPic">在图片后面添加文本</button>
+<button id="btn1">追加文本</button>
+<button id="btn2">追加列表项</button>
+<button onclick="appendText()">追加多段文本不同方法</button>
+</body>
+</html>

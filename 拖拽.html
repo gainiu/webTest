@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test拖拽</title>
+    <style type="text/css">
+        #div1,#div2{
+            float: left;width: 200px;height: 200px;border: 1px solid #993333;margin: 10px;
+        }
+    </style>
+    <script type="text/javascript">
+        function allowDrag(ev){
+            ev.preventDefault();
+        }
+        function drag(ev){
+            ev.dataTransfer.setData("Text", ev.target.id);
+        }
+        function drop(ev){
+            ev.preventDefault();
+            var data=ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</head>
+<body>
+<div id="div1" ondragover="allowDrag(event)" ondrop="drop(event)">
+    <img src="pic/2.jpg" draggable="true" id="img1" ondragstart="drag(event)" />
+</div>
+<div id="div2" ondragover="allowDrag(event)" ondrop="drop(event)"></div>
+</body>
+</html>

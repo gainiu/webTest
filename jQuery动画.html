@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery动画</title>
+    <script src="JS/jquery-3.1.0.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".start").click(function(){
+               var div1=$(".div1");
+                div1.animate({height:"300px",opacity:"0.4"},3000);
+                div1.animate({width:"300px",opacity:"0.8",fontSize:"3em"},1000);
+                div1.animate({height:"100px",opacity:"0.4",fontSize:"3em"},500);
+                div1.animate({width:"100px",opacity:"0.8",fontSize:"1em"});
+            });
+            $(".stop").click(function(){
+                $(".div1").stop();
+            });
+        });
+    </script>
+    <style type="text/css">
+        div.div1{
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            background-color: #99bf23;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<p class="start">开始动画</p>
+<button class="stop">停止动画</button>
+<p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。
+    如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute。</p>
+<div class="div1">JQuery!</div>
+</body>
+</html>

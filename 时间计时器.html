@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>time</title>
+    <script type="text/javascript">
+        function clock(){
+            var time=new Date();
+                h=time.getHours();
+                m=time.getMinutes();
+                s=time.getSeconds();
+            //在小于10的数字前添加0
+            m=adZero(m);
+            s=adZero(s);
+
+            document.getElementById("clock").innerHTML=h+":"+m+":"+s;
+        }
+        setInterval(clock,100);
+        function adZero(i){
+            if(i<10){
+                i="0"+i;}
+                return i;
+
+        }
+    </script>
+</head>
+<body>
+<div id="clock" size="50"></div>
+</body>
+</html>

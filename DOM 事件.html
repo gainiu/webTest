@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom事件</title>
+    <script type="text/javascript">
+        function dom(){
+            var x=document.getElementById("dom");
+            x.value= x.value.toUpperCase();
+        }
+
+        function onOver(obj){
+           obj.innerHTML="谢谢！";
+        }
+        function onOut(obj) {
+            obj.innerHTML="请把鼠标移到上面";
+        }
+        function myFunction(){
+            var p;
+            var text="";
+            var person={fname:"Bill",lname:"Gates",age:"56"};
+            for(p in person){
+                text=text+person[p];
+            }
+            document.getElementById("demo").innerHTML=text;
+        }
+    </script>
+    <style>
+        div{
+        background-color: #327dff;
+        color: #ffffff;
+        width: 250px;
+        height: 120px;
+        line-height: 120px;
+        text-align: center;
+        font-family: "Microsoft YaHei UI", sans-serif;
+        font-size: 24px;
+    }</style>
+</head>
+<body>
+请输入英文字符：<input id="dom" type="text" onchange="dom()" />
+<div onmouseover="onOver(this)" onmouseout="onOut(this)">请把鼠标移到上面</div>
+<button onclick="myFunction()">请点击这里</button>
+<p id="demo"></p>
+</body>
+</html>
